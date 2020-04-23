@@ -1,7 +1,9 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import fetch from 'node-fetch'
+import { getSortedPostsData } from '../assets/lib/fetch-posts'
 
-export default function Home() {
+export default function Home({data}) {
   return (
     <div className="container">
       <Head>
@@ -22,11 +24,11 @@ export default function Home() {
           <h3>Life</h3>
           <ul>
             <li>
-              <Link href="/posts/thoughts"> Thoughts</Link>
+              <Link href="/posts/thoughts"><a>Thoughts</a></Link>
             </li>
-            <li>
-              <Link href="/posts/books"> Books</Link>
-            </li>
+            {data.map(post => (
+              <li> <Link href="/"><a> { post.title } - {post.date}</a></Link></li>
+            ))}
           </ul>
         </div>
       </main>
@@ -193,4 +195,19 @@ export default function Home() {
       `}</style>
     </div>
   )
+}
+
+export async function getStaticProps() {
+  // Get external data from the file system, API, DB, etc.
+  const data = getSortedPostsData();
+  const apiData = await fetch("https://ic-goblog.herokuapp.com/api/v1/posts")
+  .then(data => data.json())
+  // The value of the `props` key will be
+  //  passed to the `Home` component
+  return {
+    props: {
+      data,
+      apiData: apiData
+    }
+  }
 }
