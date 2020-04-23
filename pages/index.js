@@ -9,14 +9,16 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <div className="page-cover">
+        {/* <img src="/mind.jpg" ></img> */}
+      </div>
       <main>
-        
         <h1 className="title"> 
         <span className="emoji">📕</span>
-        Personal Home
+          Personal Home
         </h1>
         <h2><small>Organize everything in your life in one place.</small></h2>
-        <p>
+        <div>
           <h3>Life</h3>
           <ul>
             <li>
@@ -26,7 +28,7 @@ export default function Home() {
               <Link href="/posts/books"> Books</Link>
             </li>
           </ul>
-        </p>
+        </div>
       </main>
 
       <footer>
@@ -42,7 +44,6 @@ export default function Home() {
       <style jsx>{`
         .container {
           min-height: 100vh;
-          padding: 0 0.5rem;
           display: flex;
           flex-direction: column;
           justify-content: center;
@@ -158,6 +159,15 @@ export default function Home() {
           line-height: 1.5;
         }
 
+        .page-cover {
+          background: silver;
+          background-image: url(mind.jpg);
+          background-size: cover;
+          background-position: center;
+          height: 300px;
+          width: 100%;
+        }
+
         @media (max-width: 600px) {
           .grid {
             width: 100%;
@@ -174,6 +184,7 @@ export default function Home() {
           font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
             Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
             sans-serif;
+          color: #333;
         }
 
         * {
