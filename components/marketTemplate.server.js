@@ -4,6 +4,8 @@ import { getContracts } from "../utils/getContracts"
 import { getProvider } from "../utils/getProvider";
 import fetch from "node-fetch"
 import useData from "../utils/useData";
+import Image from "next/image";
+import ItemCard from "./itemCard.client";
 
 const fetchMarketItems = async () => {
     const provider = getProvider()
@@ -42,7 +44,7 @@ const MarketPlaceGrid = ({ id }) => {
             <div>
                 Market Place
                 { items.map((item) => (
-                    <div key={item.dna}>{item.name} {item.dna}</div>
+                    <ItemCard key={item.dna} item={item} />
                 ))}
             </div>
         </>
