@@ -9,10 +9,13 @@
   },
   "dependencies": {
     "gray-matter": "^4.0.2",
-    "next": "9.3.5",
+    "next": "^12.0.0",
     "node-fetch": "^2.6.1",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
     "sass": "^1.26.3"
+  },
+  "devDependencies": {
+    "ethers": "^5.5.1",
+    "react": "^18.0.0-alpha-4298ddbc5-20211023",
+    "react-dom": "^18.0.0-alpha-4298ddbc5-20211023"
   }
 }
