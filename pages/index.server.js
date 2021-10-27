@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import fetch from 'node-fetch'
 import { getSortedPostsData } from '../assets/lib/fetch-posts'
+import MarketTemplate from '../components/marketTemplate.server'
 
 export default function Home({data}) {
   return (
@@ -31,6 +32,7 @@ export default function Home({data}) {
             ))}
           </ul>
         </div>
+        <MarketTemplate />
       </main>
 
       <footer>
