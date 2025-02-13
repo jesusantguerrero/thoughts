@@ -14,7 +14,7 @@
     "sass": "^1.26.3"
   },
   "devDependencies": {
-    "ethers": "^5.5.1",
+    "ethers": "^6.13.5",
     "react": "^18.0.0-alpha-4298ddbc5-20211023",
     "react-dom": "^18.0.0-alpha-4298ddbc5-20211023"
   }
